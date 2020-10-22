@@ -3,7 +3,7 @@ package ArrayPrep;
 
 public class ReverseArray {
 
-    public static int [] ReverseArray(int [] a)
+    public static void ReverseArray(int [] a)
     {
         for(int i=0,j=a.length-1;i<a.length/2;i++,j--)
         {
@@ -14,7 +14,6 @@ public class ReverseArray {
             a[i] = a[j];
             a[j] = temp;
         }
-        return a;
     }
 
     public static void ListArray(int [] a)
@@ -29,11 +28,12 @@ public class ReverseArray {
         System.out.println("------------------------------------");
     }
 
+
     public static void main(String[] args) {
 
         int [] a = {1,2,3,4};
         ListArray(a);
-        a = ReverseArray(a);
+        ReverseArray(a);
         ListArray(a);
     }
 }
