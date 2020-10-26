@@ -1,22 +1,21 @@
-package ArrayPrep;
+package arrayprep;
 
-public class NegativeElementsArray {
+public class Rotate1Array {
 
-    public static void swap(int [] a , int index1,int index2)
-    {
+    public static void swap(int[] a, int index1, int index2) {
         int temp = a[index1];
         a[index1] = a[index2];
         a[index2] = temp;
     }
 
-    private static void moveNegativeNum(int[] a) { //move neg to start of Array
+    private static void rotateArrayByOne(int[] a) {
 
-        int megPtr = 0;
+        int processingIndex = 0;
 
-        for(int i=0;i<a.length;i++)
+        for(int i=0;i<a.length-1;i++)
         {
-            if(a[i]<0)
-                swap(a,i,megPtr++);
+            int newPosition = (i+1)%(a.length);
+            swap(a,processingIndex,newPosition);
         }
 
     }
@@ -33,13 +32,14 @@ public class NegativeElementsArray {
         System.out.println("------------------------------------");
     }
 
-    public static void main(String[] args) {
 
-        int [] a = {-1,2,-9,3,4,5,-6,-8,-9,-10};
+    public static void main(String[] args) {
+        int [] a = {1,2,3,4,5,6,7,8,9};
         ListArray(a);
-        moveNegativeNum(a);
+        rotateArrayByOne(a);
         ListArray(a);
     }
+
 
 
 }

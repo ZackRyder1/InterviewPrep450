@@ -1,4 +1,4 @@
-package ArrayPrep;
+package arrayprep;
 
 public class MinMaxArray {
     public static int [] MinMax(int [] numbers)
