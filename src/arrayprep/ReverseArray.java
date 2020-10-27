@@ -3,7 +3,7 @@ package arrayprep;
 
 public class ReverseArray {
 
-    public static void ReverseArray(int [] a)
+    public static void reverseArray(int [] a)
     {
         for(int i=0,j=a.length-1;i<a.length/2;i++,j--)
         {
@@ -33,7 +33,7 @@ public class ReverseArray {
 
         int [] a = {1,2,3,4};
         ListArray(a);
-        ReverseArray(a);
+        reverseArray(a);
         ListArray(a);
     }
 }
