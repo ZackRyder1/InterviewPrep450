@@ -1,6 +1,6 @@
 package arrayprep;
 
-public class Only3ElementsSort {
+public class ThreeWayPartitioning {
 
     public static void swap(int[] a, int index1, int index2) {
         int temp = a[index1];
@@ -8,7 +8,9 @@ public class Only3ElementsSort {
         a[index2] = temp;
     }
 
-    public static void sortThreeElements(int[] arr) {
+    public static void threeWayPartition(int[] arr, int lowVal, int highVal)
+    {
+
         int  n = arr.length;
 
         // Initialize ext available positions for
@@ -23,7 +25,7 @@ public class Only3ElementsSort {
             // range, put it on next available smaller
             // position.
 
-            if(arr[i] == 0)
+            if(arr[i] < lowVal)
             {
 
                 int temp = arr[start];
@@ -37,7 +39,7 @@ public class Only3ElementsSort {
             // If current element is greater than
             // range, put it on next available greater
             // position.
-            else if(arr[i] == 2)
+            else if(arr[i] > highVal)
             {
 
                 int temp = arr[end];
@@ -50,25 +52,15 @@ public class Only3ElementsSort {
             else
                 i++;
         }
-    }
 
-    public static void ListArray(int[] a) {
-        System.out.println("------------------------------------");
-        System.out.println("Contents of array are:");
-        for (int p : a) {
-            System.out.print(p + " ");
-        }
-        System.out.println();
-        System.out.println("------------------------------------");
     }
 
     public static void main(String[] args) {
-        int [] a = {0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1};
-//        int[] a = {2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0};
-        ListArray(a);
-        sortThreeElements(a);
-        ListArray(a);
-
-
+        int [] a =  {1, 14, 5, 20, 4, 2, 54, 20, 87, 98, 3, 1, 32};
+        int lowVal = 14;
+        int highVal = 20;
+        ReverseArray.ListArray(a);
+        threeWayPartition(a,lowVal,highVal);
+        ReverseArray.ListArray(a);
     }
 }
