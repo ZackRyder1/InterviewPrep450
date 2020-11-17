@@ -1,3 +1,5 @@
+package arrayprep;
+
 public class TrappingRainWater {
 
     private static int findRainWater(int[] a) {
